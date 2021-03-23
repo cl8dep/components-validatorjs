@@ -3,10 +3,10 @@ import InitialData from "./InitialData";
 
 interface FormHandlerProps {
   rules: Rules;
-  validationMessages: object;
-  shouldRefresh: () => boolean;
-  initialData: InitialData;
-  validationDelay: number
+  validationMessages?: object;
+  shouldRefresh?: () => boolean;
+  initialData?: InitialData;
+  validationDelay?: number
 }
 
 export default FormHandlerProps;

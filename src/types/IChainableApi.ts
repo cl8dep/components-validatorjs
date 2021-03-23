@@ -1,5 +1,3 @@
-import Handler2 from "../handler2";
-
 interface IChainableApi {
   validateForm: any,
   invalidateField: any,

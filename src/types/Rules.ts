@@ -1,7 +1,7 @@
-import {TypeCheckingRule} from "../Validator";
+//import {TypeCheckingRule} from "../Validator/index";
 
 interface Rules {
-  [attribute: string]: string | Array<string | TypeCheckingRule> | Rules;
+  [attribute: string]: string | Array<string /*| TypeCheckingRule*/> | Rules;
 }
 
 export default Rules;
