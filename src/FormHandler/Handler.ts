@@ -121,7 +121,7 @@ class Handler {
     return this;
   }
 
-  validateForm() {
+  validateForm(ignorePristine = false) {
     const validation = new Validator(
       Handler.getData(this._formState),
       this._validationRules,
@@ -131,7 +131,8 @@ class Handler {
     const { errors } = validation;
     const validationResult: ValidationResult = {};
     forEachField(this._validationRules, (fieldName) => {
-      const { isPristine } = this._formState[fieldName];
+      let { isPristine } = this._formState[fieldName];
+      isPristine = ignorePristine ? false : isPristine
       validationResult[fieldName] = {
         isValid: isPristine ? true : !errors.first(fieldName),
         isValidated: !isPristine,

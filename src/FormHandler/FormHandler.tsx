@@ -58,9 +58,8 @@ function FormHandler(props: FormHandlerProps) {
       this._formHandler.updateState();
     };
 
-    _validateForm = (updateState = true) => {
-      console.log(updateState)
-      this._formHandler.validateForm();
+    _validateForm = (ignorePristine = false, updateState = true) => {
+      this._formHandler.validateForm(ignorePristine);
       if (updateState) {
         this._updateState();
       }
